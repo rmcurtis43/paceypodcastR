@@ -1,0 +1,77 @@
+---
+output: github_document
+---
+
+
+# {paceypodcastR}
+Package for Scraping, Analyzing and Visualizing Pacey Performance Podcast Data
+
+<img src="man/figures/hexsticker.png" align="right" width="300" />
+
+
+ <!-- badges: start -->
+
+  [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+  ![version](https://img.shields.io/badge/version-0.1.0-blue)
+  <!-- badges: end -->
+
+
+**{oaceypodcastR}** is a package developed to easily gather and explore data from the [Pacey Performance Podcast host site ](https://paceyperformancepodcast.podbean.com/). This package was built as a tutorial on how to build packages in R for the Sportsmith R Course. It features functions for scraping all Pacey Performance Podcast episodes, text mining analysis, provides several vizualizations, and produces a shiny app.
+
+## Installation
+
+You can install the development version of paceypodcastR from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("rmcurtis43/paceypodcastR")
+```
+
+## Examples
+
+
+```{r example, warning=FALSE, message=FALSE}
+library(paceypodcastR)
+## basic example code
+```
+
+# Gather all Pacey Performance Podcast data using:
+
+```{r podcast_data, warning=FALSE, message=FALSE}
+head(podcast_data())
+```
+
+
+# Explore Monthly or Yearly Trends in Episode Duration:
+
+```{r pressure, warning=FALSE, message=FALSE}
+duration_month_chart()
+duration_year_chart()
+```
+
+
+# Visualize Show Type Trends Together or in Isolation
+
+```{r, warning=FALSE, message=FALSE}
+duration_show_type_chart()
+duration_show_type_chart(episode_type = "Full")
+duration_show_type_chart(episode_type = "Bitesize")
+```
+
+
+# Display a Show Timeline
+
+```{r, warning=FALSE, message=FALSE}
+timeline_chart()
+```
+
+
+# paceypodcastR Shiny App
+
+
+***
+
+<video auto-play="true" loop="loop" width="1000" height="800" controls>
+  <source src="inst/videos/paceypodcastR_app.mp4" type="video/mp4">
+</video>
+
