@@ -1,0 +1,37 @@
+Package: paceypodcastR
+Type: Package
+Title: Package for Scraping, Analyzing and Visualizing Pacey Performance Podcast Data
+Version: 0.1.0
+Author: Ryan Curtis
+Maintainer: Ryan Curtis <rmcurtis43@yahoo.com>
+Description: This package was built as a tutorial on how to build packages in R for the Sportsmith R Course.
+    It features functions for scraping all Pacey Performance Podcast episodes, text mining analysis, provides several vizualizations, and produces a shiny app.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    base64enc,
+    bs4Dash,
+    dplyr,
+    DT,
+    fresh,
+    ggimage,
+    ggplot2,
+    ggtext,
+    graphics,
+    grDevices,
+    lubridate,
+    magick,
+    purrr,
+    RColorBrewer,
+    rvest,
+    shiny,
+    shinycssloaders,
+    shinydashboard,
+    shinydashboardPlus,
+    stringr,
+    tm,
+    waiter,
+    wordcloud,
+    xml2
+RoxygenNote: 7.2.1
