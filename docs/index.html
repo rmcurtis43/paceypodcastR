@@ -44,7 +44,14 @@
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/rmcurtis43/paceypodcastR/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -56,12 +63,98 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-This package was built as a tutorial on how to build packages in R for the Sportsmith R Course.
-    It features functions for scraping all Pacey Performance Podcast episodes, text mining analysis, provides several vizualizations, and produces a shiny app.
+
+<div class="section level1">
+<div class="page-header"><h1 id="paceypodcastr">{paceypodcastR}<a class="anchor" aria-label="anchor" href="#paceypodcastr"></a>
+</h1></div>
+<p>Package for Scraping, Analyzing and Visualizing Pacey Performance Podcast Data</p>
+<p><img src="reference/figures/hexsticker.png" align="right" width="300"></p>
+<!-- badges: start -->
+
+<p><strong>{oaceypodcastR}</strong> is a package developed to easily gather and explore data from the <a href="https://paceyperformancepodcast.podbean.com/" class="external-link">Pacey Performance Podcast host site</a>. This package was built as a tutorial on how to build packages in R for the Sportsmith R Course. It features functions for scraping all Pacey Performance Podcast episodes, text mining analysis, provides several vizualizations, and produces a shiny app.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the development version of paceypodcastR from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"rmcurtis43/paceypodcastR"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rmcurtis43/paceypodcastR" class="external-link">paceypodcastR</a></span><span class="op">)</span></span>
+<span><span class="co">## basic example code</span></span></code></pre></div>
+</div>
+</div>
+<div class="section level1">
+<h1 id="gather-all-pacey-performance-podcast-data-using">Gather all Pacey Performance Podcast data using:<a class="anchor" aria-label="anchor" href="#gather-all-pacey-performance-podcast-data-using"></a>
+</h1>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="reference/podcast_data.html">podcast_data</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 6 x 12</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">##   title     date       descr~1 durat~2 url   guest descr~3 show_~4 show_~5  year</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;chr&gt;     &lt;date&gt;     &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 "Pacey P~ 2015-04-24 "The f~    25.8 http~ Ben ~ "The f~       1 Full     2015</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 "Pacey P~ 2015-04-24 "In th~    31.1 http~ Keir~ "In th~       2 Full     2015</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 "Pacey P~ 2015-04-24 "This ~    36.4 http~ Mike~ "This ~       3 Full     2015</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 "Pacey P~ 2015-04-24 "This ~    41.9 http~ Andy~ "This ~       4 Full     2015</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 " Pacey ~ 2015-04-24 "The f~    33.2 http~ Dan ~ "The f~       5 Full     2015</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 6 "Pacey P~ 2015-04-24 "After~    38.7 http~ Mlad~ "After~       6 Full     2015</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="do">## # ... with 2 more variables: week &lt;dbl&gt;, weekday &lt;chr&gt;, and abbreviated</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="do">## #   variable names 1: description, 2: duration, 3: description_clean,</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="do">## #   4: show_num, 5: show_type</span></span></code></pre></div>
+</div>
+<div class="section level1">
+<h1 id="explore-monthly-or-yearly-trends-in-episode-duration">Explore Monthly or Yearly Trends in Episode Duration:<a class="anchor" aria-label="anchor" href="#explore-monthly-or-yearly-trends-in-episode-duration"></a>
+</h1>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/duration_month_chart.html">duration_month_chart</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="README_files/figure-gfm/pressure-1.png"><!-- --></p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/duration_year_chart.html">duration_year_chart</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="README_files/figure-gfm/pressure-2.png"><!-- --></p>
+</div>
+<div class="section level1">
+<h1 id="visualize-show-type-trends-together-or-in-isolation">Visualize Show Type Trends Together or in Isolation<a class="anchor" aria-label="anchor" href="#visualize-show-type-trends-together-or-in-isolation"></a>
+</h1>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/duration_show_type_chart.html">duration_show_type_chart</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-1-1.png"><!-- --></p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/duration_show_type_chart.html">duration_show_type_chart</a></span><span class="op">(</span>episode_type <span class="op">=</span> <span class="st">"Full"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-1-2.png"><!-- --></p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/duration_show_type_chart.html">duration_show_type_chart</a></span><span class="op">(</span>episode_type <span class="op">=</span> <span class="st">"Bitesize"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-1-3.png"><!-- --></p>
+</div>
+<div class="section level1">
+<h1 id="display-a-show-timeline">Display a Show Timeline<a class="anchor" aria-label="anchor" href="#display-a-show-timeline"></a>
+</h1>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/timeline_chart.html">timeline_chart</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-2-1.png"><!-- --></p>
+</div>
+<div class="section level1">
+<h1 id="paceypodcastr-shiny-app">paceypodcastR Shiny App<a class="anchor" aria-label="anchor" href="#paceypodcastr-shiny-app"></a>
+</h1>
+<hr>
+<video auto-play="true" loop="loop" width="1000" height="800" controls><source src="inst/videos/paceypodcastR_app.mp4" type="video/mp4"></source></video>
+</div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="license">
+    <div class="links">
+<h2 data-toc-skip>Links</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/rmcurtis43/paceypodcastR/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/rmcurtis43/paceypodcastR/issues" class="external-link">Report a bug</a></li>
+</ul>
+</div>
+
+<div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
@@ -84,7 +177,12 @@ This package was built as a tutorial on how to build packages in R for the Sport
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://www.tidyverse.org/lifecycle/#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+</ul>
+</div>
 
   </div>
 </div>

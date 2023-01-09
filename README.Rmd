@@ -16,7 +16,7 @@ Package for Scraping, Analyzing and Visualizing Pacey Performance Podcast Data
   <!-- badges: end -->
 
 
-**{oaceypodcastR}** is a package developed to easily gather and explore data from the [Pacey Performance Podcast host site ](https://paceyperformancepodcast.podbean.com/). This package was built as a tutorial on how to build packages in R for the Sportsmith R Course. It features functions for scraping all Pacey Performance Podcast episodes, text mining analysis, provides several vizualizations, and produces a shiny app.
+**{paceypodcastR}** is a package developed to easily gather and explore data from the [Pacey Performance Podcast host site ](https://paceyperformancepodcast.podbean.com/). This package was built as a tutorial on how to build packages in R for the Sportsmith R Course. It features functions for scraping all Pacey Performance Podcast episodes, text mining analysis, provides several vizualizations, and produces a shiny app.
 
 ## Installation
 

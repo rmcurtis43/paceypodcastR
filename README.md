@@ -13,7 +13,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 ![version](https://img.shields.io/badge/version-0.1.0-blue)
 <!-- badges: end -->
 
-**{oaceypodcastR}** is a package developed to easily gather and explore
+**{paceypodcastR}** is a package developed to easily gather and explore
 data from the [Pacey Performance Podcast host
 site](https://paceyperformancepodcast.podbean.com/). This package was
 built as a tutorial on how to build packages in R for the Sportsmith R
